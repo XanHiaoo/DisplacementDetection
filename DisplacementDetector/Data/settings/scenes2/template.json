@@ -1,0 +1,21 @@
+{
+  "//": "samsungs23u CameraMatrix",
+  "CameraMatrix": [
+    [
+      2841,
+      0.0,
+      1920
+    ],
+    [
+      0.0,
+      2838,
+      1469
+    ],
+    [
+      0.0,
+      0.0,
+      1.0
+    ]
+  ],
+  "MarkerRadius": 1.5
+}
