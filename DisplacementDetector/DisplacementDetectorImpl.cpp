@@ -157,10 +157,12 @@ double DisplacementDetectorImpl::calculationErrors() {
 
     double maxImpact = 0.0;
 
-    for (int i = -3; i <= 3; i += 6) {
-        for (int j = -3; j <= 3; j += 6) {
-            for (int k = -3; k <= 3; k += 6) {
-                for (int l = -3; l <= 3; l += 6) {
+    //像素偏离值(中心点)，用于计算距离误差
+    int pixel_offset_value = 3;
+    for (int i = -pixel_offset_value; i <= pixel_offset_value; i += pixel_offset_value * 2) {
+        for (int j = -pixel_offset_value; j <= pixel_offset_value; j += pixel_offset_value * 2) {
+            for (int k = -pixel_offset_value; k <= pixel_offset_value; k += pixel_offset_value * 2) {
+                for (int l = -pixel_offset_value; l <= pixel_offset_value; l += pixel_offset_value * 2) {
                     cv::Point p1_diff = cv::Point(p1.x + i, p1.y + j); // 像素差异
                     cv::Vec3d dir1_diff((p1_diff.x - u) / fx, (p1_diff.y - v) / fy, 1.0); // 新的方向向量
 
